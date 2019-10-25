@@ -1,6 +1,6 @@
 # Video Doorbell, Lab 7
 
-*A lab report by John Q. Student*
+*A lab report by Frans Fourie. Student*
 
 ### In This Report
 
@@ -10,13 +10,13 @@
 
 ## Part A. HelloYou from the Raspberry Pi
 
-**a. Link to a video of your HelloYou sketch running.**
+[Hello You code Demo](https://youtu.be/UYng2GflEJw)<br />
 
 ## Part B. Web Camera
 
 **a. Compare `helloYou/server.js` and `IDD-Fa18-Lab7/pictureServer.js`. What elements had to be added or changed to enable the web camera? (Hint: It might be good to know that there is a UNIX command called `diff` that compares files.)**
 
-**b. Include a video of your working video doorbell**
+**b.** [Hello You code Demo with camera functionality added](https://youtu.be/GbRqAlS6LPA)<br />
 
 ## Part C. Make it your own
 
