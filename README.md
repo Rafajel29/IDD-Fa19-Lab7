@@ -16,6 +16,8 @@
 
 **a. Compare `helloYou/server.js` and `IDD-Fa18-Lab7/pictureServer.js`. What elements had to be added or changed to enable the web camera? (Hint: It might be good to know that there is a UNIX command called `diff` that compares files.)**
 
+There are three main differences. Firstly the variables in the server.js file is initialized as constants whereas they are initialized as variables in the pictureServer.js file. Secondly the pictureServer.js file contains the unique variable NodeWebcam that is used to laod and start the webcam module. The NodeWebcam variable is also used to later in the code that takes the picture, names it, stores it and then sends it to clien.js to be displayed in the web server. The third difference is that pictureServer.js contains the functionality for the new button take picture that is used to tell the server to take a picture when pressed. The code to do this is the same as the code explained in difference number two.
+
 **b. [Hello You code Demo with camera functionality added](https://youtu.be/GbRqAlS6LPA)<br />**
 
 ## Part C. Make it your own
