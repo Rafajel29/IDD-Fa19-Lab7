@@ -29,6 +29,8 @@ var Readline = SerialPort.parsers.Readline; // read serial data as lines
 //-- Addition:
 var NodeWebcam = require( "node-webcam" );// load the webcam module
 
+const player = require('play-sound')();
+
 //---------------------- WEBAPP SERVER SETUP ---------------------------------//
 // use express to create the simple webapp
 app.use(express.static('public')); // find pages in public directory
@@ -89,12 +91,16 @@ parser.on('data', function(data) {
   console.log('Data:', data);
   io.emit('server-msg', data);
 
-  var imageName = new Date().toString().replace(/[&\/\\#,+()$~%.'":*?<>{}\s-]/g, ''); // For video doorbell only
+  var imageName = new Date().toString().replace(/[&\/\\#,+()$~%.'":*?<>{}\s-]/g, '');
 
   NodeWebcam.capture('public/'+imageName, opts, function( err, data ) {
-  io.emit('newPicture',(imageName+'.jpg')); // For video doorbell only 
+  io.emit('newPicture',(imageName+'.jpg'));
   });
 
+
+player.play('./notify/just-like-magic.mp3', (err) => {
+    if (err) console.log(`Could not play sound: ${err}`);
+});
 
 });
 //----------------------------------------------------------------------------//
@@ -124,7 +130,7 @@ io.on('connect', function(socket) {
     /// The .replace() function removes all special characters from the date.
     /// This way we can use it as the filename.
     var imageName = new Date().toString().replace(/[&\/\\#,+()$~%.'":*?<>{}\s-]/g, '');
-
+    console.log('take picture')
     console.log('making a making a picture at'+ imageName); // Second, the name is logged to the console.
 
     //Third, the picture is  taken and saved to the `public/`` folder
