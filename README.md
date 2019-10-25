@@ -16,7 +16,7 @@
 
 **a. Compare `helloYou/server.js` and `IDD-Fa18-Lab7/pictureServer.js`. What elements had to be added or changed to enable the web camera? (Hint: It might be good to know that there is a UNIX command called `diff` that compares files.)**
 
-**b.** [Hello You code Demo with camera functionality added]()<br />
+**b.** [Hello You code Demo with camera functionality added](https://youtu.be/GbRqAlS6LPA)<br />
 
 ## Part C. Make it your own
 
